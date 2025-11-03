@@ -1,8 +1,42 @@
 {
-  "name": "znn-tool",
-  "version": "1.0.0",
-  "description": "scripts tools",
-  "main": "index.js",
-  "author": "znh",
-  "license": "ISC"
+  "name": "znh-tool",
+  "version": "1.0.1",
+  "description": "纯JavaScript工具函数库",
+  "type": "module",
+  "main": "dist/znh-tool.umd.js",
+  "module": "dist/znh-tool.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/znh-tool.es.js",
+      "require": "./dist/znh-tool.umd.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": " && vite build",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/280828574/znh-tool.git"
+  },
+  "keywords": [
+    "utils",
+    "tools",
+    "javascript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/280828574/znh-tool/issues"
+  },
+  "homepage": "https://github.com/280828574/znh-tool#readme",
+  "devDependencies": {
+    "vite": "^4.5.1",
+    "vitest": "^0.34.6"
+  }
 }
