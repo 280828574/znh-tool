@@ -16,7 +16,8 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "npm version patch && vite build",
+    "build": "vite build",
+    "buildVersion": "npm version patch && vite build",
     "preview": "vite preview",
     "test": "vitest"
   },

@@ -19,8 +19,8 @@ export default defineConfig({
     sourcemap: true,
     rollupOptions: {
       output: {
-        // 仅具名导出，避免 default+named 混用警告
-        exports: 'named',
+        // 默认导出配置
+        exports: 'default',
       },
     },
   },

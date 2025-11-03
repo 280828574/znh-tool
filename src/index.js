@@ -2,16 +2,24 @@
  * @file 工具库入口文件
  * @description 导出所有工具函数
  */
+// 使用Vite的import.meta.glob动态导入modules目录中的所有文件
+const moduleFiles = import.meta.glob('./modules/*.js', { eager: true })
 
-// 导入各个模块
-import * as stringUtils from './modules/string.js'
-import * as validationUtils from './modules/validation.js'
+// 创建模块映射和导出对象
+const exports = {}
 
-// 导出所有模块（仅具名导出，避免 default+named 混用）
-export { stringUtils, validationUtils }
+// 处理导入的模块
+for (const path in moduleFiles) {
+  // 获取文件名（不含路径）
+  const filename = path.split('/').pop()
+  // 获取模块名（不含扩展名）
+  const moduleName = filename.replace('.js', '')
 
-// 删除默认导出，保持与库构建的 exports: 'named' 一致
-export default {
-  string: stringUtils,
-  validate: validationUtils,
+  // 保存到模块映射
+
+  // 保存到模块映射
+  exports[moduleName] = moduleFiles[path]
 }
+
+// 默认导出（整体导出所有模块）
+export default exports
