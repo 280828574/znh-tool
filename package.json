@@ -1,0 +1,8 @@
+{
+  "name": "znn-tool",
+  "version": "1.0.0",
+  "description": "scripts tools",
+  "main": "index.js",
+  "author": "znh",
+  "license": "ISC"
+}
