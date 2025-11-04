@@ -9,6 +9,9 @@
     <script type="module">
       import scripts from './dist/znh-tool.es.js'
       console.log('%c [ scripts ]-11', 'font-size:13px; background:pink; color:#bf2c9f;', scripts)
+      scripts.base.getVideo('你好').then(res => {
+        console.log('%c [ res ]-13', 'font-size:13px; background:pink; color:#bf2c9f;', res)
+      })
     </script>
   </body>
 </html>

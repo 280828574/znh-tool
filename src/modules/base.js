@@ -4,6 +4,7 @@
  */
 
 import BigNumber from 'bignumber.js'
+import $api from '../../utils/api/index'
 
 // 日期格式化
 export function parseTime(time, pattern) {
@@ -624,4 +625,16 @@ export function getDateTimes(params) {
   //   w = week[w]
   let str = `${y}年${M}月${d}日 ${w}`
   return str //返回字符串
+}
+// 获取语音文件
+export function getVideo(text) {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const res = await $api.base.getVideo({ text })
+      resolve(res.data)
+    } catch (error) {
+      console.log('%c [ error ]-568', 'font-size:13px; background:pink; color:#bf2c9f;', error)
+      reject(error)
+    }
+  })
 }

@@ -15,7 +15,7 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite",
+    "dev": "npx vite-node utils/api/index.js",
     "build": "npm version patch && vite build",
     "buildTest": "vite build",
     "preview": "vite preview",
@@ -38,9 +38,11 @@
   "homepage": "https://github.com/280828574/znh-tool#readme",
   "devDependencies": {
     "vite": "^4.5.1",
+    "vite-node": "^3.2.4",
     "vitest": "^0.34.6"
   },
   "dependencies": {
+    "axios": "^1.13.1",
     "bignumber.js": "^9.3.1"
   }
 }
